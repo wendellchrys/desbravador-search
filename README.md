@@ -63,13 +63,16 @@ Para inicializar o projeto, siga os passos abaixo:
 ```
 
 2. **Navegue até o diretório do projeto:**
-``` cd desbravador-search
+```bash
+cd desbravador-search
 ```
 
 3. **Instale as dependências:**
-``` pnpm install
+```bash
+pnpm install
 ```
 
 4. **Inicie o servidor de desenvolvimento:**
-``` pnpm dev
+```bash
+pnpm dev
 ```
