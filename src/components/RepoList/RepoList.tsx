@@ -49,23 +49,36 @@ export const RepoList = ({ username }: RepoListProps) => {
     const renderColumn = (repos: Repo[], start: number, end: number) => {
         const columnRepos = repos.slice(start, end);
         return (
-            <div className="col-md-4">
-                <ul className="list-group rounded-0">
+            <div className="col-md">
+                <ul className="list-group rounded-0 mb-4">
                     {columnRepos.map((repo) => (
-                        <li key={repo.id} className="list-group-item border-primary-subtle d-flex align-items-center" data-testid={`repo-${repo.id}`}>
-                            <Link className='text-primary-emphasis' to={`/repo/${username}/${repo.name}`}>{repo.name}</Link> - {repo.stargazers_count} {repo.stargazers_count <= 1 ? 'estrela' : 'estrelas'}
+                        <li key={repo.id} className="list-group-item border-primary-subtle d-flex flex-column align-items-center" data-testid={`repo-${repo.id}`}>
+                            <Link className='text-primary-emphasis' to={`/repo/${username}/${repo.name}`}>{repo.name}</Link>
+                            {repo.stargazers_count} {repo.stargazers_count <= 1 ? 'estrela' : 'estrelas'}
                             <Link
-                                className='d-none d-md-flex align-items-center bg-body-secondary text-primary-emphasis text-decoration-none ms-2 px-1 fs-6 rounded'
+                                className='d-flex align-items-center bg-body-secondary text-primary-emphasis text-decoration-none ms-2 px-1 fs-6 rounded'
                                 to={`/repo/${username}/${repo.name}`}
                             >
                                 ver <BsPlusCircleFill className='ms-1' />
                             </Link>
-
                         </li>
                     ))}
                 </ul>
             </div>
         );
+    };
+
+    const renderColumns = () => {
+        const columnsCount = Math.ceil(repos.length / 10);
+        const columns = [];
+
+        for (let i = 0; i < columnsCount; i++) {
+            const start = i * 10;
+            const end = start + 10;
+            columns.push(renderColumn(repos, start, end));
+        }
+
+        return columns;
     };
 
     if (error) {
@@ -74,7 +87,8 @@ export const RepoList = ({ username }: RepoListProps) => {
 
     return (
         <div data-testid="repo-list" data-username={username}>
-            <div className="form-group d-flex flex-column align-items-start w-100 w-lg-25">
+            <h3 className='fs-2'>Repositórios:</h3>
+            <div className="form-group d-flex flex-column align-items-start w-lg-50 w-md-75 w-100">
                 <select id="sortOrder" className="form-control form-select form-select-lg mb-3 rounded-0 border-primary-subtle" value={sortOrder} onChange={handleSortChange}>
                     <option value="desc">Descendente</option>
                     <option value="asc">Ascendente</option>
@@ -84,9 +98,7 @@ export const RepoList = ({ username }: RepoListProps) => {
                 <Loading />
             ) : (
                 <div className="row">
-                    {renderColumn(repos, 0, 10)}
-                    {renderColumn(repos, 10, 20)}
-                    {renderColumn(repos, 20, 30)}
+                    {renderColumns()}
                 </div>
             )}
         </div>
