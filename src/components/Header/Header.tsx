@@ -14,7 +14,7 @@ export const Header = () => {
         <header className="bg-primary text-white p-3 mb-4">
             <div className="container">
                 <div className="d-flex justify-content-between align-items-center">
-                    <div><Link className='text-white' to="/" aria-label="broadcast"><BsBroadcast size={200} /></Link></div>
+                    <div><Link className='text-white' to="/" aria-label="broadcast"><BsBroadcast size={30} /></Link></div>
                     <nav>
                         <ul className="nav">
                             {!isHome && (
