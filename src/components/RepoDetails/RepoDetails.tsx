@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getRepoDetails } from '@/services/api';
 import { Loading } from '@/components/Loading';
 import { getErrorMessage } from '@/utils/getErrorMessage';
+import { format } from 'date-fns';
 
 interface RepoDetailsProps {
     username: string;
@@ -49,6 +50,9 @@ export const RepoDetails = ({ username, repoName }: RepoDetailsProps) => {
 
     if (!repo) return <div>Repositório não encontrado</div>;
 
+    const createdAtFormatted = format(new Date(repo.created_at), 'dd/MM/yyyy');
+    const updatedAtFormatted = format(new Date(repo.updated_at), 'dd/MM/yyyy');
+
     return (
         <div data-testid="repo-details" data-username={username} data-repo={repoName}>
             <h2 className='fs-2'>Mais Detalhes do Repositório</h2>
@@ -59,8 +63,8 @@ export const RepoDetails = ({ username, repoName }: RepoDetailsProps) => {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item"><strong>Estrelas:</strong> <span data-testid="repo-stars">{repo.stargazers_count}</span></li>
                         <li className="list-group-item"><strong>Linguagem:</strong> <span data-testid="repo-language">{repo.language}</span></li>
-                        <li className="list-group-item"><strong>Data da Criação:</strong> <span data-testid="repo-created-at">{repo.created_at}</span></li>
-                        <li className="list-group-item"><strong>Última Atualização:</strong> <span data-testid="repo-updated-at">{repo.updated_at}</span></li>
+                        <li className="list-group-item"><strong>Data da Criação:</strong> <span data-testid="repo-created-at">{createdAtFormatted}</span></li>
+                        <li className="list-group-item"><strong>Última Atualização:</strong> <span data-testid="repo-updated-at">{updatedAtFormatted}</span></li>
                         <li className="list-group-item"><strong>Forks:</strong> <span data-testid="repo-forks">{repo.forks || 0}</span></li>
                         <li className="list-group-item"><strong>Issues Abertos:</strong> <span data-testid="repo-open-issues">{repo.open_issues || 0}</span></li>
                     </ul>
