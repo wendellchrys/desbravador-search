@@ -59,17 +59,21 @@ Serviço com cada rota de requisição separada.
 Para inicializar o projeto, siga os passos abaixo:
 
 1. **Clone o repositório:**
-```git clone https://github.com/wendellchrys/desbravador-search.git
+```bash
+git clone https://github.com/wendellchrys/desbravador-search.git
 ```
 
 2. **Navegue até o diretório do projeto:**
-``` cd desbravador-search
+```bash
+cd desbravador-search
 ```
 
 3. **Instale as dependências:**
-``` pnpm install
+```bash
+pnpm install
 ```
 
 4. **Inicie o servidor de desenvolvimento:**
-``` pnpm dev
+```bash
+pnpm dev
 ```
