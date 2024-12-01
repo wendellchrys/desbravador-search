@@ -54,7 +54,13 @@ export const RepoList = ({ username }: RepoListProps) => {
                     {columnRepos.map((repo) => (
                         <li key={repo.id} className="list-group-item border-primary-subtle d-flex align-items-center" data-testid={`repo-${repo.id}`}>
                             <Link className='text-primary-emphasis' to={`/repo/${username}/${repo.name}`}>{repo.name}</Link> - {repo.stargazers_count} {repo.stargazers_count <= 1 ? 'estrela' : 'estrelas'}
-                            <Link className='d-flex align-items-center bg-body-secondary text-primary-emphasis text-decoration-none ms-2 px-1 fs-6 rounded' to={`/repo/${username}/${repo.name}`}>ver <BsPlusCircleFill className='ms-1' /></Link>
+                            <Link
+                                className='d-none d-md-flex align-items-center bg-body-secondary text-primary-emphasis text-decoration-none ms-2 px-1 fs-6 rounded'
+                                to={`/repo/${username}/${repo.name}`}
+                            >
+                                ver <BsPlusCircleFill className='ms-1' />
+                            </Link>
+
                         </li>
                     ))}
                 </ul>
@@ -68,7 +74,7 @@ export const RepoList = ({ username }: RepoListProps) => {
 
     return (
         <div data-testid="repo-list" data-username={username}>
-            <div className="form-group d-flex flex-column align-items-start w-25">
+            <div className="form-group d-flex flex-column align-items-start w-100 w-lg-25">
                 <select id="sortOrder" className="form-control form-select form-select-lg mb-3 rounded-0 border-primary-subtle" value={sortOrder} onChange={handleSortChange}>
                     <option value="desc">Descendente</option>
                     <option value="asc">Ascendente</option>

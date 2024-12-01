@@ -51,7 +51,7 @@ export const RepoDetails = ({ username, repoName }: RepoDetailsProps) => {
 
     return (
         <div data-testid="repo-details" data-username={username} data-repo={repoName}>
-            <h2>Mais Detalhes do Repositório</h2>
+            <h2 className='fs-2'>Mais Detalhes do Repositório</h2>
             <div className="card rounded-0 border-primary-subtle mt-4">
                 <div className="card-body">
                     <h5 className="card-title"><strong>Nome:</strong> <span data-testid="repo-name">{repo.name}</span></h5>

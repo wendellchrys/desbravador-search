@@ -42,7 +42,7 @@ export const UserDetails = ({ username }: UserDetailsProps) => {
 
     return (
         <div data-testid="user-details" data-username={username}>
-            <h2>Detalhes do Usuário</h2>
+            <h2 className='fs-2'>Detalhes do Usuário</h2>
             <div className="card mt-4 rounded-0 border-primary-subtle">
                 <div className="row g-0">
                     <div className="col-md-4 p-3">

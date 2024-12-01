@@ -6,7 +6,7 @@ import './App.css';
 
 export const App = () => {
   return (
-    <div className="vh-100">
+    <div className="container vh-100">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user/:username" element={<User />} />
