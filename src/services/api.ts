@@ -7,7 +7,6 @@ const api = axios.create({
 export const getUserDetails = async (username: string) => {
   try {
     const response = await api.get(`/users/${username}`);
-    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch user details');

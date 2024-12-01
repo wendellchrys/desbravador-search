@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getUserDetails } from '@/services/api';
 import { Loading } from '@/components/Loading';
-import { getErrorMessage } from '@/utils/errorHandler';
+import { getErrorMessage } from '@/utils/getErrorMessage';
 
 interface UserDetailsProps {
     username: string;

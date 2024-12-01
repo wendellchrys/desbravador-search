@@ -6,7 +6,7 @@ jest.mock('@/services/api', () => ({
     getUserDetails: jest.fn(),
 }));
 
-jest.mock('@/utils/errorHandler', () => ({
+jest.mock('@/utils/getErrorMessage', () => ({
     getErrorMessage: jest.fn().mockReturnValue('Erro ao carregar os detalhes do usuário'),
 }));
 

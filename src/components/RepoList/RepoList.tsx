@@ -3,7 +3,7 @@ import { getUserRepos } from '@/services/api';
 import { Link } from 'react-router-dom';
 import { Loading } from '@/components/Loading';
 import { BsPlusCircleFill } from 'react-icons/bs';
-import { getErrorMessage } from '@/utils/errorHandler';
+import { getErrorMessage } from '@/utils/getErrorMessage';
 
 interface RepoListProps {
     username: string;

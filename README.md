@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# Desbravador Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Desbravador Search](https://i.postimg.cc/L8R6Wrv7/image.png)
 
-Currently, two official plugins are available:
+Este projeto é uma aplicação React + TypeScript utilizando Vite, que permite buscar usuários e repositórios do GitHub. A aplicação inclui páginas para buscar usuários, visualizar detalhes dos usuários e detalhes dos repositórios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Destaques**
 
-## Expanding the ESLint configuration
+- **Testes Unitários**: Cobertura completa de todos os componentes, páginas e utils.
+- **Bootstrap**: Foi utilizado o bootstrap para a criação das classes e responsividade
+- **Axios**: Requisições utilizando o axios, sendo chamadas pelo services/api. Cada chamada tem seu devido tratamento em caso de erro.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Páginas**
 
-- Configure the top-level `parserOptions` property like this:
+### Home
+Página inicial onde o usuário pode efetuar uma busca de um usuário do GitHub.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### User
+Página listando detalhes do usuário que foi pesquisado no GitHub.
+
+### Repo
+Página listando detalhes do repositório que foi clicado na página User.
+
+## **Componentes**
+
+### Header
+Componente Header da aplicação, com um ícone simulando a logo e um botão de voltar que fica visível somente nas páginas User e Repo.
+
+### Loading
+Componente de Loading que é utilizado enquanto as requisições estão sendo carregadas.
+
+### RepoDetails
+Componente responsável por listar os detalhes do repositório.
+
+### RepoList
+Componente responsável por exibir a lista de repositórios.
+
+### UserDetails
+Componente responsável por exibir detalhes do usuário.
+
+### UserSearch
+Componente responsável por exibir o formulário e efetuar a busca de um usuário.
+
+## **Utils**
+
+### getErrorMessage
+Função responsável por tratar a mensagem de erro nas requisições da API.
+
+### gitHubValidation
+Função responsável por validar se o padrão do usuário digitado é válido.
+
+## **Services**
+
+### api
+Serviço com cada rota de requisição separada.
+
+## **Inicialização do Projeto**
+
+Para inicializar o projeto, siga os passos abaixo:
+
+1. **Clone o repositório:**
+```git clone https://github.com/wendellchrys/desbravador-search.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Navegue até o diretório do projeto:**
+``` cd desbravador-search
+```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. **Instale as dependências:**
+``` pnpm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+4. **Inicie o servidor de desenvolvimento:**
+``` pnpm dev
 ```

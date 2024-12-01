@@ -7,7 +7,7 @@ jest.mock('@/services/api', () => ({
     getUserRepos: jest.fn(),
 }));
 
-jest.mock('@/utils/errorHandler', () => ({
+jest.mock('@/utils/getErrorMessage', () => ({
     getErrorMessage: jest.fn().mockReturnValue('Erro ao carregar os repositórios'),
 }));
 
