@@ -75,7 +75,11 @@ export const RepoList = ({ username }: RepoListProps) => {
         for (let i = 0; i < columnsCount; i++) {
             const start = i * 10;
             const end = start + 10;
-            columns.push(renderColumn(repos, start, end));
+            columns.push(
+                <div key={i} className="col-md">
+                    {renderColumn(repos, start, end)}
+                </div>
+            );
         }
 
         return columns;

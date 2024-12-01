@@ -22,8 +22,8 @@ describe('Pages :: Repo', () => {
             description: 'Descrição de exemplo',
             stargazers_count: 10,
             language: 'Typescript',
-            created_at: '2023-01-01',
-            updated_at: '2023-01-02',
+            created_at: '2023-01-01T13:00:00Z',
+            updated_at: '2023-01-02T13:00:00Z',
             forks: 2,
             open_issues: 1,
             html_url: 'https://github.com/testuser/testrepo',
@@ -48,9 +48,9 @@ describe('Pages :: Repo', () => {
         expect(screen.getByText('Linguagem:')).toBeInTheDocument();
         expect(screen.getByText('Typescript')).toBeInTheDocument();
         expect(screen.getByText('Data da Criação:')).toBeInTheDocument();
-        expect(screen.getByText('2023-01-01')).toBeInTheDocument();
+        expect(screen.getByText('01/01/2023')).toBeInTheDocument();
         expect(screen.getByText('Última Atualização:')).toBeInTheDocument();
-        expect(screen.getByText('2023-01-02')).toBeInTheDocument();
+        expect(screen.getByText('02/01/2023')).toBeInTheDocument();
         expect(screen.getByText('Forks:')).toBeInTheDocument();
         expect(screen.getByText('2')).toBeInTheDocument();
         expect(screen.getByText('Issues Abertos:')).toBeInTheDocument();

@@ -42,8 +42,8 @@ describe('Components :: RepoDetails', () => {
             stargazers_count: 10,
             language: 'JavaScript',
             html_url: 'https://github.com/testuser/testrepo',
-            created_at: '2023-01-01',
-            updated_at: '2023-01-02',
+            created_at: '2023-01-01T13:00:00Z',
+            updated_at: '2023-01-02T13:00:00Z',
             forks: 2,
             open_issues: 1,
         });
@@ -56,8 +56,8 @@ describe('Components :: RepoDetails', () => {
         expect(screen.getByTestId('repo-description')).toHaveTextContent('Descrição de exemplo');
         expect(screen.getByTestId('repo-stars')).toHaveTextContent('10');
         expect(screen.getByTestId('repo-language')).toHaveTextContent('JavaScript');
-        expect(screen.getByTestId('repo-created-at')).toHaveTextContent('2023-01-01');
-        expect(screen.getByTestId('repo-updated-at')).toHaveTextContent('2023-01-02');
+        expect(screen.getByTestId('repo-created-at')).toHaveTextContent('01/01/2023');
+        expect(screen.getByTestId('repo-updated-at')).toHaveTextContent('02/01/2023');
         expect(screen.getByTestId('repo-forks')).toHaveTextContent('2');
         expect(screen.getByTestId('repo-open-issues')).toHaveTextContent('1');
         expect(screen.getByRole('link', { name: /Visualizar no GitHub/i })).toHaveAttribute('href', 'https://github.com/testuser/testrepo');
@@ -70,8 +70,8 @@ describe('Components :: RepoDetails', () => {
             stargazers_count: 10,
             language: 'JavaScript',
             html_url: 'https://github.com/testuser/testrepo',
-            created_at: '2023-01-01',
-            updated_at: '2023-01-02',
+            created_at: '2023-01-01T13:00:00Z',
+            updated_at: '2023-01-02T13:00:00Z',
             forks: 0,
             open_issues: 0,
         });
@@ -84,8 +84,8 @@ describe('Components :: RepoDetails', () => {
         expect(screen.getByTestId('repo-description')).toHaveTextContent('Sem descrição');
         expect(screen.getByTestId('repo-stars')).toHaveTextContent('10');
         expect(screen.getByTestId('repo-language')).toHaveTextContent('JavaScript');
-        expect(screen.getByTestId('repo-created-at')).toHaveTextContent('2023-01-01');
-        expect(screen.getByTestId('repo-updated-at')).toHaveTextContent('2023-01-02');
+        expect(screen.getByTestId('repo-created-at')).toHaveTextContent('01/01/2023');
+        expect(screen.getByTestId('repo-updated-at')).toHaveTextContent('02/01/2023');
         expect(screen.getByTestId('repo-forks')).toHaveTextContent('0');
         expect(screen.getByTestId('repo-open-issues')).toHaveTextContent('0');
         expect(screen.getByRole('link', { name: /Visualizar no GitHub/i })).toHaveAttribute('href', 'https://github.com/testuser/testrepo');

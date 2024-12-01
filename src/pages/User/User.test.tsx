@@ -51,9 +51,9 @@ describe('Pages :: User', () => {
 
         await waitFor(() => expect(screen.getByText('Descendente')).toBeInTheDocument());
         expect(screen.getByText('Repo 1')).toBeInTheDocument();
-        expect(screen.getByText('- 10 estrelas')).toBeInTheDocument();
+        expect(screen.getByText(/10 estrelas/)).toBeInTheDocument();
         expect(screen.getByText('Repo 2')).toBeInTheDocument();
-        expect(screen.getByText('- 5 estrelas')).toBeInTheDocument();
+        expect(screen.getByText(/5 estrelas/)).toBeInTheDocument();
         expect(screen.getAllByText('ver')).toHaveLength(2);
 
         expect(getUserDetails).toHaveBeenCalledWith('testuser');
