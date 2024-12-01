@@ -59,7 +59,8 @@ Serviço com cada rota de requisição separada.
 Para inicializar o projeto, siga os passos abaixo:
 
 1. **Clone o repositório:**
-```git clone https://github.com/wendellchrys/desbravador-search.git
+```bash
+git clone https://github.com/wendellchrys/desbravador-search.git
 ```
 
 2. **Navegue até o diretório do projeto:**
