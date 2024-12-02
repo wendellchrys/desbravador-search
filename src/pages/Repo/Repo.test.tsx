@@ -72,7 +72,6 @@ describe('Pages :: Repo', () => {
 
         await waitFor(() => expect(screen.getByText('Mais Detalhes do Repositório')).toBeInTheDocument());
 
-        // Check if RepoDetails is called with empty strings
         const repoDetailsProps = screen.getByTestId('repo-details');
         expect(repoDetailsProps).toHaveAttribute('data-username', '');
         expect(repoDetailsProps).toHaveAttribute('data-repo', '');
